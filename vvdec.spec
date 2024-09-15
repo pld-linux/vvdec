@@ -57,7 +57,7 @@ install -d build
 cd build
 %cmake .. \
 	-DCMAKE_SKIP_INSTALL_RPATH=ON \
-	%{!?with_sse41:-DVVDEC_ENABLE_X86_SIMD=OFF} \
+	%{!?with_sse4:-DVVDEC_ENABLE_X86_SIMD=OFF} \
 	-DVVDEC_INSTALL_VVDECAPP=ON
 
 %{__make}
@@ -68,6 +68,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT%{_bindir}
+install -p build/source/App/vvdecapp/vvdecapp $RPM_BUILD_ROOT%{_bindir}
 cp -dp build/source/Lib/vvdec/libvvdec.so* $RPM_BUILD_ROOT%{_libdir}
 
 %clean
@@ -79,6 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS.md LICENSE.txt README.md
+%attr(755,root,root) %{_bindir}/vvdecapp
 %attr(755,root,root) %{_libdir}/libvvdec.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libvvdec.so.2
 
