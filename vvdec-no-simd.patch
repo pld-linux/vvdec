@@ -1,0 +1,10 @@
+Fix missing simde_bswap definition without TARGET_SIMD_X86
+--- vvdec-2.3.0/source/Lib/CommonLib/x86/CommonDefX86.h.orig	2024-04-29 14:46:10.000000000 +0200
++++ vvdec-2.3.0/source/Lib/CommonLib/x86/CommonDefX86.h	2024-09-15 14:48:36.788864195 +0200
+@@ -94,4 +94,6 @@ static inline __m128i _mm256_cvtepi32_ep
+ 
+ }   // namespace vvdec
+ 
++#else
++#include <simde/simde-common.h>
+ #endif // TARGET_SIMD_X86

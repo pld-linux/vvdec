@@ -1,0 +1,12 @@
+--- vvdec-2.3.0/pkgconfig/libvvdec.pc.in.orig	2024-04-29 14:46:10.000000000 +0200
++++ vvdec-2.3.0/pkgconfig/libvvdec.pc.in	2024-09-15 13:41:52.967221425 +0200
+@@ -1,7 +1,7 @@
+ prefix=@CMAKE_INSTALL_PREFIX@
+ exec_prefix=@CMAKE_INSTALL_BINDIR@
+-libdir=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_LIBDIR@
+-includedir=@CMAKE_INSTALL_PREFIX@/@CMAKE_INSTALL_INCLUDEDIR@
++libdir=@CMAKE_INSTALL_FULL_LIBDIR@
++includedir=@CMAKE_INSTALL_FULL_INCLUDEDIR@
+ 
+ Name: libvvdec
+ Description: Fraunhofer Versatile Video Decoder (VVdeC)
