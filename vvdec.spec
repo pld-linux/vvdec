@@ -14,6 +14,7 @@ Source0:	https://github.com/fraunhoferhhi/vvdec/archive/v%{version}/%{name}-%{ve
 # Source0-md5:	574fbeb4ddff1a7e064153f47d053c9d
 Patch0:		%{name}-pc.patch
 Patch1:		%{name}-no-simd.patch
+Patch2:		%{name}-pld.patch
 URL:		https://github.com/fraunhoferhhi/vvdec
 BuildRequires:	cmake >= 3.12.0
 # C++14
@@ -51,6 +52,7 @@ Pliki nagłówkowe biblioteki VVdeC.
 %setup -q
 %patch -P0 -p1
 %patch -P1 -p1
+%patch -P2 -p1
 
 %build
 install -d build
