@@ -5,13 +5,13 @@
 Summary:	Fraunhofer Versatile Video Decoder (VVdeC)
 Summary(pl.UTF-8):	VVdeC - dekoder obrazu Fraunhofer Versatile Video
 Name:		vvdec
-Version:	3.1.0
+Version:	3.2.0
 Release:	1
 License:	BSD
 Group:		Libraries
 #Source0Download: https://github.com/fraunhoferhhi/vvdec/releases
 Source0:	https://github.com/fraunhoferhhi/vvdec/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	574fbeb4ddff1a7e064153f47d053c9d
+# Source0-md5:	7a479fbf07cc9c69f227757328eddf83
 Patch0:		%{name}-pc.patch
 Patch1:		%{name}-no-simd.patch
 Patch2:		%{name}-pld.patch
